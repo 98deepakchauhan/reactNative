@@ -7,7 +7,10 @@ export default function ViewImageScreen() {
       <ImageBackground
         style={styles.bgImage}
         source={require('../assets/chair.jpg')}>
-        <View></View>
+        <View>
+          <View style={styles.redBtn}></View>
+          <View style={styles.blueBtn}></View>
+        </View>
       </ImageBackground>
     </View>
   );
@@ -19,10 +22,27 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   bgImage: {
+    flex: 1,
     resizeMode: 'contain',
     width: '100%',
-    height: '80%',
+    // height: '80%',
     marginTop: 'auto',
     marginBottom: 'auto',
+  },
+
+  btnSection: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+
+  redBtn: {
+    backgroundColor: 'red',
+    width: 50,
+    height: 50,
+  },
+  blueBtn: {
+    backgroundColor: 'skyblue',
+    width: 50,
+    height: 50,
   },
 });
