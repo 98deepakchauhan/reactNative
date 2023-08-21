@@ -1,15 +1,23 @@
-import {View, Text, ImageBackground, StyleSheet} from 'react-native';
-import React from 'react';
+import {View, Text, ImageBackground, StyleSheet} from "react-native";
+import React from "react";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-export default function ViewImageScreen() {
+import colors from "../config/colors";
+
+export default function ViewImageScreen(props) {
   return (
     <View style={styles.container}>
       <ImageBackground
+        resizeMode="contain"
         style={styles.bgImage}
-        source={require('../assets/chair.jpg')}>
-        <View>
-          <View style={styles.redBtn}></View>
-          <View style={styles.blueBtn}></View>
+        source={require("../assets/chair.jpg")}>
+        <View style={styles.btnSection}>
+          <View style={styles.closeBtn}>
+            <Icon name="window-close" color={"white"} size={35} />
+          </View>
+          <View style={styles.deleteBtn}>
+            <Icon name="trash-can-outline" color={"white"} size={35} />
+          </View>
         </View>
       </ImageBackground>
     </View>
@@ -19,30 +27,21 @@ export default function ViewImageScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: colors.black,
   },
   bgImage: {
     flex: 1,
-    resizeMode: 'contain',
-    width: '100%',
-    // height: '80%',
-    marginTop: 'auto',
-    marginBottom: 'auto',
+    // resizeMode: "contain",
+    width: "100%",
+    height: "100%",
   },
 
   btnSection: {
-    flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
+    marginTop: "5%",
+    marginHorizontal: "5%",
+    justifyContent: "space-between",
   },
-
-  redBtn: {
-    backgroundColor: 'red',
-    width: 50,
-    height: 50,
-  },
-  blueBtn: {
-    backgroundColor: 'skyblue',
-    width: 50,
-    height: 50,
-  },
+  closeBtn: {},
+  deleteBtn: {},
 });
