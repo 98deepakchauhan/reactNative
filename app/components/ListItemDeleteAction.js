@@ -21,5 +21,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-
-s8n3bdf9s8wbs3iz;
