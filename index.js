@@ -12,5 +12,6 @@ import Card from "./app/components/Card";
 import TestScreen from "./app/screen/TestScreen";
 import ListingDetailsScreen from "./app/screen/ListingDetailsScreen";
 import MessagesScreen from "./app/screen/MessagesScreen";
+import AccountScreen from "./app/screen/AccountScreen";
 
-AppRegistry.registerComponent(appName, () => MessagesScreen);
+AppRegistry.registerComponent(appName, () => AccountScreen);

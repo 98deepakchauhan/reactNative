@@ -1,21 +1,18 @@
 import {View, Text, StyleSheet} from "react-native";
 import React from "react";
+
 import Card from "../components/Card";
+import colors from "../config/colors";
+import Icon from "../components/Icon";
+import ListItem from "../components/ListItem";
 
 export default function TestScreen() {
   return (
-    <View style={styles.container}>
-      <Card
-        title="Red Jacket for Sale!"
-        subTitle="₹100"
-        image={require("../assets/jacket.jpg")}
-      />
-      <Card
-        title="This is card 2"
-        subTitle="₹1000"
-        image={require("../assets/jacket.jpg")}
-      />
-    </View>
+    <ListItem
+      title={"hi there"}
+      subTitle={"something else"}
+      ImageComponent={<Icon name={"laptop"} />}
+    />
   );
 }
 
