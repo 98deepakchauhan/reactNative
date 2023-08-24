@@ -15,14 +15,14 @@ export default function ListItem({
   style,
   onPress,
   renderRightActions,
-  ImageComponent,
+  IconComponent,
 }) {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <Swipeable renderRightActions={renderRightActions}>
         <TouchableHighlight underlayColor={colors.mediumGrey} onPress={onPress}>
           <View style={[styles.container, style]}>
-            {ImageComponent}
+            {IconComponent}
             {image && <Image source={image} style={styles.image} />}
             <View style={styles.textContainer}>
               <AppText style={styles.title}>{title}</AppText>
@@ -40,6 +40,7 @@ export default function ListItem({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    marginHorizontal: 10,
   },
   image: {
     width: 70,

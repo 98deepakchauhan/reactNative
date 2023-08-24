@@ -4,17 +4,18 @@ import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
+import ListItemSeparator from "../components/ListItemSeparator";
 
 const menuItems = [
   {
-    title: "My Email",
+    title: "My Listing",
     icon: {
       name: "format-list-bulleted",
       backgroundColor: colors.primary,
     },
   },
   {
-    title: "My Listing",
+    title: "My Email",
     icon: {
       name: "email",
       backgroundColor: colors.secondary,
@@ -36,10 +37,12 @@ export default function AccountScreen() {
         <FlatList
           data={menuItems}
           keyExtractor={item => item.title}
+          ItemSeparatorComponent={ListItemSeparator}
           renderItem={({item}) => (
             <ListItem
+              style={styles.listItem}
               title={item.title}
-              ImageComponent={
+              IconComponent={
                 <Icon
                   name={item.icon.name}
                   backgroundColor={item.icon.backgroundColor}
@@ -49,6 +52,10 @@ export default function AccountScreen() {
           )}
         />
       </View>
+      <ListItem
+        title={"Log Out"}
+        IconComponent={<Icon name={"logout"} backgroundColor="#ffe66d" />}
+      />
     </View>
   );
 }
@@ -60,5 +67,8 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
     flex: 1,
+  },
+  listItem: {
+    marginVertical: 5,
   },
 });
